@@ -1,2 +1,1 @@
-# Movies-app-SSR
-Rewritten movies app with NextJS
+Movie app created using NextJS
