@@ -48,7 +48,7 @@ export const MovieCard: FC<IMovieCardProps> = ({
           className={cx("poster__img")}
           onError={({ currentTarget }) => {
             currentTarget.onerror = null;
-            currentTarget.src = DefaultPosterPlaceholder;
+            // currentTarget.src = DefaultPosterPlaceholder;
           }}
           onClick={() => onMovieCardClick(movieDetails)}
         />

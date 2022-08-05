@@ -1,6 +1,6 @@
 import React, { FC, useCallback } from "react";
 import classNames from "classnames/bind";
-import useMovie from "../../../context/MovieContext/MovieContext";
+// import useMovie from "../../../context/MovieContext/MovieContext";
 import { Button } from "../../UI/Button/Button";
 import { SvgIcon } from "../../UI/Icon/SvgIcon";
 import MenuIcon from "../../../assets/threedots.svg";
@@ -16,14 +16,14 @@ export const MovieContextMenu: FC<IMovieContextMenuProps> = ({
   toggleDeleteModal,
   onContextMenuClick,
 }) => {
-  const { openedMovieMenuId, setOpenedMovieMenuId } = useMovie();
+  // const { openedMovieMenuId, setOpenedMovieMenuId } = useMovie();
 
-  const onMenuButtonClick = useCallback(() => {
-    if (openedMovieMenuId === movieId) {
-      return setOpenedMovieMenuId(null);
-    }
-    setOpenedMovieMenuId(movieId);
-  }, [openedMovieMenuId]);
+  const onMenuButtonClick = () => {
+    // if (openedMovieMenuId === movieId) {
+    //   return setOpenedMovieMenuId(null);
+    // }
+    // setOpenedMovieMenuId(movieId);
+  };
 
   return (
     <>
@@ -31,19 +31,16 @@ export const MovieContextMenu: FC<IMovieContextMenuProps> = ({
         <Button variant="secondary" shape="round" onClick={onMenuButtonClick}>
           <SvgIcon icon={MenuIcon} isSmall />
         </Button>
-        {openedMovieMenuId === movieId && (
-          <div className={cx("context-menu__options")}>
-            <Button variant={ButtonVariant.secondary} onClick={toggleEditModal}>
-              Edit
-            </Button>
-            <Button
-              variant={ButtonVariant.secondary}
-              onClick={toggleDeleteModal}
-            >
-              Delete
-            </Button>
-          </div>
-        )}
+        {/* {openedMovieMenuId === movieId && ( */}
+        <div className={cx("context-menu__options")}>
+          <Button variant={ButtonVariant.secondary} onClick={toggleEditModal}>
+            Edit
+          </Button>
+          <Button variant={ButtonVariant.secondary} onClick={toggleDeleteModal}>
+            Delete
+          </Button>
+        </div>
+        {/* )} */}
       </div>
     </>
   );
